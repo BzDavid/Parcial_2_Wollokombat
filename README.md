@@ -1,7 +1,7 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/9AsqjP2W)
-# Parcial 2 ComisiÃ³n 1â€“ Objetos 1 â€“ Unahur â€“ 2025 â€“ Primer Cuatrimestre
+# Parcial 2 ComisiÃ³n # | Objetos 1 | Unahur 2025 Primer Cuatrimestre
 
-# ** Mortal Wollokombat**
+# **Mortal Wollokombat**
 
 Este documento describe las especificaciones para el simulador de pelea Mortal Wollokombat, donde todos los peleadores van a enfrentarse.
 
@@ -15,46 +15,46 @@ Los peleadores son las protagonistas que participan en las batallas del Torneo.
 
 Todos los peleadores tienen:
 
-- **`experiencia`**: Un valor numérico que representa su experiencia.
+- **`experiencia`**: Un valor numÃ©rico que representa su experiencia.
 - **`puntos de salud (PS)`**: Comienzan con 100 PS.
-- **`ataques`**: Los ataques que conocen. Solo pueden tener tres como máximo
+- **`ataques`**: Los ataques que conocen. Solo pueden tener tres como mÃ¡ximo
 
 ### **Ataques**
 
-Los ataques se caracterizan por el **valor del daño** que generan.
+Los ataques se caracterizan por el **valor del daÃ±o** que generan.
 
 ### **Comportamiento General**
 
-- Un peleador puede atacar si tiene **más de 1 punto de salud**.
-- Los peleadores ya poseen una colección de ataques. 
+- Un peleador puede atacar si tiene **mÃ¡s de 1 punto de salud**.
+- Los peleadores ya poseen una colecciÃ³n de ataques. 
 
 ---
 
 ## **Tipos de Peleadores**
 
-Los peleadores **siempre** pertenecen a un elemento. Por ahora conocemos cuatro elementos, cada uno con comportamientos únicos, pero podrían sumarse nuevos en el futuro.
+Los peleadores **siempre** pertenecen a un elemento. Por ahora conocemos cuatro elementos, cada uno con comportamientos Ãºnicos, pero podrÃ­an sumarse nuevos en el futuro.
 
 ### **1. Peleador tipo Fuego**
 
-- **Daño que efectúa**: La **suma** de los daños de todos sus ataques.
-- **Atributo especial**: `Velocidad del fuego`. Mientras más rápido sea este, menos daño hará. Se calcula que hace un tercio del daño siempre que la velocidad sea mayor a 60.
+- **DaÃ±o que efectÃºa**: La **suma** de los daÃ±os de todos sus ataques.
+- **Atributo especial**: `Velocidad del fuego`. Mientras mÃ¡s rÃ¡pido sea este, menos daÃ±o harÃ¡. Se calcula que hace un tercio del daÃ±o siempre que la velocidad sea mayor a 60.
 ---
 
 ### **2. Peleador tipo Aire**
 
 - **Atributo especial**: `viento cortante`.
-- **Puede atacar**: Si cumple la condición general (PS > 1) y además su `viento cortante` es **mayor a 20**.
-- **Daño que efectúa**: El valor de su `viento cortante` + el daño de su **mejor ataque** (aquel que genera mayor daño).
+- **Puede atacar**: Si cumple la condiciÃ³n general (PS > 1) y ademÃ¡s su `viento cortante` es **mayor a 20**.
+- **DaÃ±o que efectÃºa**: El valor de su `viento cortante` + el daÃ±o de su **mejor ataque** (aquel que genera mayor daÃ±o).
 
 ---
 
 ### **3. Peleador tipo Rayo**
 
-- Todos los peleadores Eléctricos dependen de los combos activos. Se consideran `cargados` cuando el valor del combo actual sea **mayor a 80**.
-- **Puede atacar**: Si cumple la condición general (PS > 10) y además está `cargado`.
-- **Daño que efectúa**:
-  - Si está `cargado`: Aplica el daño del **primer ataque** de su lista.
-  - Si no está `cargado`: No aplica ningún daño (0) y debe añadir diez (10) puntos de carga.
+- Todos los peleadores ElÃ©ctricos dependen de los combos activos. Se consideran `cargados` cuando el valor del combo actual sea **mayor a 80**.
+- **Puede atacar**: Si cumple la condiciÃ³n general (PS > 10) y ademÃ¡s estÃ¡ `cargado`.
+- **DaÃ±o que efectÃºa**:
+  - Si estÃ¡ `cargado`: Aplica el daÃ±o del **primer ataque** de su lista.
+  - Si no estÃ¡ `cargado`: No aplica ningÃºn daÃ±o (0) y debe aÃ±adir diez (10) puntos de carga.
 
 ---
 
@@ -62,38 +62,31 @@ Los peleadores **siempre** pertenecen a un elemento. Por ahora conocemos cuatro 
 
 Los peleadores Legendarios son un tipo especial de peleador de **Aire**, pero poseen una `Marca` que potencia su ataque.
 
-- **Daño que efectúa**: El daño definido para los Aire, más un aumento proporcionado por su `Marca`.
+- **DaÃ±o que efectÃºa**: El daÃ±o definido para los Aire, mÃ¡s un aumento proporcionado por su `Marca`.
 
 #### **Tipos de Marcas**
 
-- ** Marca Roja**:
-  - Si `viento cortante` > 20: Aumenta el daño en **10**.
-  - De lo contrario: Aumenta el daño en **5**.
-- ** Marca Azul**: Aumenta el daño en **8** siempre.
-- ** Marca Verde**: No aumenta el daño a efectuar.
+- **Marca Roja**:
+  - Si `viento cortante` > 20: Aumenta el daÃ±o en **10**.
+  - De lo contrario: Aumenta el daÃ±o en **5**.
+- ** Marca Azul**: Aumenta el daÃ±o en **8** siempre.
+- ** Marca Verde**: No aumenta el daÃ±o a efectuar.
 
 ---
 
-## ** Requerimientos (Wollomon)**
+## **Requerimientos (De los peleadores)**
 
 - Saber si un peleador puede atacar o no.
-- Obtener el daño que efectúa un peleador al atacar.
+- Obtener el daÃ±o que efectÃºa un peleador al atacar.
 - Hacer que un peleador pueda decir su primer ataque.
-- Añadir un nuevo ataque para el peleador.
+- AÃ±adir un nuevo ataque para el peleador.
 
-### **Lógica de Test**
+### **LÃ³gica de Test**
 
-**Objetivo:** Validar que la función "Daño que efectúa" de los peleadores de sea el daño correcto.
+**Objetivo:** Validar que la funciÃ³n "DaÃ±o que efectÃºa" de los peleadores de sea el daÃ±o correcto.
 
-> ** Dado:**
->
+> **Dado:**
+> Instanciar:
 > - Participante 1: **`Liu Kang`** de tipo fuego con 15 de experiencia, y dos ataques. 
 > - Participante 2: **`Subzero`** de tipo aire con 30 de experiencia, y tres ataques. 
-> - Participante 3: **`Tomás`**  de tipo rayo con 10 de experiencia, un ataque y 30 de vida. 
->
-> ** Cuando:**
->
-> - Se ejecuta la función "Daño que efectúa".
->
-> ** Entonces (Resultado):**
->
+> - Participante 3: **`TomÃ¡s`**  de tipo rayo con 10 de experiencia, un ataque y 30 de vida. 
